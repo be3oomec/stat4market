@@ -1,0 +1,135 @@
+.hero {
+  position: relative;
+  @include adaptive-value('padding-bottom', 147, 50, 1);
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    width: 783px;
+    height: 783px;
+    background-repeat: no-repeat;
+
+
+    @include _1200 {
+      display: none;
+    }
+  }
+
+  &:before {
+    top: -200px;
+    left: -660px;
+    background-image: url(../img/bg-hero1.svg);
+    z-index: 1001;
+
+
+    @include _1700 {
+      left: -750px;
+    }
+  }
+
+  &:after {
+    bottom: -280px;
+    right: -740px;
+    background-image: url(../img/bg-hero1.svg);
+  }
+}
+
+.hero__inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.hero__info {
+  max-width: 870px;
+  flex: 0 1 60%;
+
+  @include _1200 {
+    flex: 0 1 100%;
+  }
+}
+
+.hero__title {
+  margin-bottom: 22px;
+}
+
+.hero__price {
+  margin-bottom: 16px;
+}
+
+.hero__price span {
+  color: $pink;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 1.45;
+  margin-right: 5px;
+}
+
+.hero__icon {
+  width: 48px;
+  height: 48px;
+  margin-right: 25px;
+  fill: #CF51CE;
+  position: relative;
+  bottom: -10px;
+}
+
+.hero__descr {
+  @include adaptive-value('font-size', 25, 18, 1);
+
+  @include _1200 {
+    @include adaptive-value('max-width', 640, 200, 1);
+  }
+
+  @include _768 {
+    max-width: 100%;
+  }
+}
+
+.hero__descr p {
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
+
+.hero__img {
+  max-width: 560px;
+  position: relative;
+  flex: 0 1 40%;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url(../img/bg-hero3.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 620px;
+    height: 560px;
+    z-index: -1;
+
+    @include _1200 {
+      display: none;
+    }
+  }
+
+  @include _1200 {
+    position: absolute;
+    right: -250px;
+    bottom: 100px;
+  }
+
+  @include _768 {
+    display: none;
+  }
+}
+
+.hero__img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
